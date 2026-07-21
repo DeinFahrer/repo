@@ -49,30 +49,50 @@ export default async function AccountPage({
         ) : (
           <div className="mb-4 flex flex-col gap-3">
             {bookings.map((booking) => (
-              <Link
+              <div
                 key={booking.id}
-                href={`/buchung/${booking.id}`}
-                className="flex items-center justify-between rounded-lg border border-border p-3 text-sm transition-colors hover:bg-muted"
+                className="rounded-lg border border-border p-3 text-sm"
               >
-                <div>
-                  <p className="font-medium">
-                    {booking.serviceType === "CITY"
-                      ? t("serviceCity")
-                      : t("serviceAirport")}
-                  </p>
-                  <p className="text-muted-foreground">
-                    {booking.date.toLocaleDateString(locale)} · {booking.startTime}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="font-medium">
-                    {formatRappen(booking.priceRappen, locale)}
-                  </p>
-                  <Badge variant="secondary">
-                    {t(statusKey[booking.status])}
-                  </Badge>
-                </div>
-              </Link>
+                <Link
+                  href={`/buchung/${booking.id}`}
+                  className="flex items-center justify-between transition-colors hover:text-primary"
+                >
+                  <div>
+                    <p className="font-medium">
+                      {booking.serviceType === "CITY"
+                        ? t("serviceCity")
+                        : t("serviceAirport")}
+                    </p>
+                    <p className="text-muted-foreground">
+                      {booking.date.toLocaleDateString(locale)} · {booking.startTime}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-medium">
+                      {formatRappen(booking.priceRappen, locale)}
+                    </p>
+                    <Badge variant="secondary">
+                      {t(statusKey[booking.status])}
+                    </Badge>
+                  </div>
+                </Link>
+                {booking.status === "COMPLETED" && (
+                  <div className="mt-2 border-t border-border pt-2">
+                    {booking.review ? (
+                      <p className="text-xs text-muted-foreground">
+                        {t("reviewSubmitted")}
+                      </p>
+                    ) : (
+                      <Link
+                        href={`/buchung/${booking.id}/bewerten`}
+                        className="text-xs font-medium text-primary hover:underline"
+                      >
+                        {t("leaveReview")}
+                      </Link>
+                    )}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         )}

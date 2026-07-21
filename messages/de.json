@@ -68,7 +68,25 @@
     "statusCancelled": "Storniert",
     "statusCompleted": "Abgeschlossen",
     "serviceCity": "Stadtfahrt",
-    "serviceAirport": "Flughafentransfer"
+    "serviceAirport": "Flughafentransfer",
+    "leaveReview": "Bewertung abgeben",
+    "reviewSubmitted": "Bewertet, wartet auf Freigabe"
+  },
+  "Reviews": {
+    "formTitle": "Wie war deine Fahrt?",
+    "formSubtitle": "Deine Bewertung hilft anderen und uns.",
+    "ratingLabel": "Bewertung",
+    "commentLabel": "Dein Kommentar",
+    "commentPlaceholder": "Erzähl uns von deiner Fahrt …",
+    "submit": "Bewertung absenden",
+    "successTitle": "Danke für dein Feedback!",
+    "successSubtitle": "Deine Bewertung wird nach kurzer Prüfung veröffentlicht.",
+    "backToAccount": "Zurück zu meinem Konto",
+    "pageTitle": "Bewertungen",
+    "pageSubtitle": "Was unsere Kundinnen und Kunden sagen.",
+    "empty": "Noch keine Bewertungen vorhanden.",
+    "notAllowedTitle": "Keine Bewertung möglich",
+    "notAllowedSubtitle": "Diese Buchung kann nicht (mehr) bewertet werden."
   },
   "Booking": {
     "cityTitle": "Stadtfahrt buchen",

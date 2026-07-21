@@ -68,7 +68,25 @@
     "statusCancelled": "Cancelled",
     "statusCompleted": "Completed",
     "serviceCity": "City ride",
-    "serviceAirport": "Airport transfer"
+    "serviceAirport": "Airport transfer",
+    "leaveReview": "Leave a review",
+    "reviewSubmitted": "Reviewed, awaiting approval"
+  },
+  "Reviews": {
+    "formTitle": "How was your ride?",
+    "formSubtitle": "Your review helps others and us.",
+    "ratingLabel": "Rating",
+    "commentLabel": "Your comment",
+    "commentPlaceholder": "Tell us about your ride …",
+    "submit": "Submit review",
+    "successTitle": "Thanks for your feedback!",
+    "successSubtitle": "Your review will be published after a quick check.",
+    "backToAccount": "Back to my account",
+    "pageTitle": "Reviews",
+    "pageSubtitle": "What our customers say.",
+    "empty": "No reviews yet.",
+    "notAllowedTitle": "Review not available",
+    "notAllowedSubtitle": "This booking can't be reviewed (anymore)."
   },
   "Booking": {
     "cityTitle": "Book a city ride",
