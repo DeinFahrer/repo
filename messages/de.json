@@ -106,9 +106,14 @@
   },
   "BookingConfirmation": {
     "title": "Buchung erfasst!",
-    "subtitle": "Deine Anfrage ist eingegangen. Die Online-Zahlung folgt in Kürze — wir melden uns bei dir.",
+    "subtitle": "Deine Anfrage ist eingegangen.",
+    "subtitlePending": "Bitte schliesse die Zahlung ab, um deine Fahrt zu sichern.",
+    "subtitleConfirmed": "Zahlung erhalten — deine Fahrt ist bestätigt.",
     "status": "Status",
     "statusPending": "Zahlung ausstehend",
+    "statusConfirmed": "Bestätigt",
+    "statusCancelled": "Storniert",
+    "statusCompleted": "Abgeschlossen",
     "date": "Datum",
     "time": "Uhrzeit",
     "pickup": "Abholung",
@@ -116,6 +121,10 @@
     "passengers": "Personen",
     "price": "Preis",
     "backToAccount": "Zurück zu meinem Konto",
-    "notFound": "Diese Buchung wurde nicht gefunden."
+    "notFound": "Diese Buchung wurde nicht gefunden.",
+    "payNow": "Jetzt bezahlen",
+    "payProcessing": "Weiterleitung zur Zahlung …",
+    "paymentError": "Zahlung konnte nicht gestartet werden.",
+    "checkoutCancelledNotice": "Die Zahlung wurde abgebrochen. Du kannst es jederzeit erneut versuchen."
   }
 }

@@ -106,9 +106,14 @@
   },
   "BookingConfirmation": {
     "title": "Booking received!",
-    "subtitle": "Your request is in. Online payment is coming soon — we'll be in touch.",
+    "subtitle": "Your request is in.",
+    "subtitlePending": "Please complete payment to secure your ride.",
+    "subtitleConfirmed": "Payment received — your ride is confirmed.",
     "status": "Status",
     "statusPending": "Payment pending",
+    "statusConfirmed": "Confirmed",
+    "statusCancelled": "Cancelled",
+    "statusCompleted": "Completed",
     "date": "Date",
     "time": "Time",
     "pickup": "Pickup",
@@ -116,6 +121,10 @@
     "passengers": "Passengers",
     "price": "Price",
     "backToAccount": "Back to my account",
-    "notFound": "This booking could not be found."
+    "notFound": "This booking could not be found.",
+    "payNow": "Pay now",
+    "payProcessing": "Redirecting to payment …",
+    "paymentError": "Payment could not be started.",
+    "checkoutCancelledNotice": "Payment was cancelled. You can try again any time."
   }
 }
