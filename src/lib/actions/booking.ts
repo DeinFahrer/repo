@@ -101,8 +101,13 @@ export async function createAirportBooking(input: unknown) {
 
   const pickupDateTime = combineDateTime(data.date, data.startTime);
   const [hours] = data.startTime.split(":").map(Number);
-  if (hours < 17) {
-    return { error: "Flughafentransfers sind erst ab 17:00 Uhr buchbar." };
+  const day = pickupDateTime.getDay();
+  const isWeekend = day === 0 || day === 6;
+  if (!isWeekend && hours < 17) {
+    return {
+      error:
+        "Von Montag bis Freitag sind Flughafentransfers erst ab 17:00 Uhr buchbar.",
+    };
   }
   if (pickupDateTime.getTime() - Date.now() < MIN_LEAD_MS) {
     return { error: "Bitte mindestens 24 Stunden im Voraus buchen." };

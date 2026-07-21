@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
@@ -33,8 +33,12 @@ import {
   FieldDescription,
 } from "@/components/ui/field";
 
-const TIME_SLOTS = Array.from({ length: 7 }, (_, i) => {
+const WEEKDAY_EVENING_SLOTS = Array.from({ length: 7 }, (_, i) => {
   const hour = 17 + i;
+  return `${String(hour).padStart(2, "0")}:00`;
+});
+
+const FULL_DAY_SLOTS = Array.from({ length: 24 }, (_, hour) => {
   return `${String(hour).padStart(2, "0")}:00`;
 });
 
@@ -42,6 +46,12 @@ function startOfToday() {
   const d = new Date();
   d.setHours(0, 0, 0, 0);
   return d;
+}
+
+function isWeekendDate(date?: Date) {
+  if (!date) return false;
+  const day = date.getDay();
+  return day === 0 || day === 6;
 }
 
 export function AirportBookingForm({
@@ -61,6 +71,8 @@ export function AirportBookingForm({
     control,
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<AirportBookingInput>({
     resolver: zodResolver(airportBookingSchema),
@@ -71,6 +83,26 @@ export function AirportBookingForm({
       needsCargoMode: false,
     },
   });
+
+  const selectedDate = watch("date");
+  const selectedStartTime = watch("startTime");
+  const isWeekend = isWeekendDate(selectedDate);
+  const timeSlots = useMemo(
+    () => (isWeekend ? FULL_DAY_SLOTS : WEEKDAY_EVENING_SLOTS),
+    [isWeekend],
+  );
+
+  useEffect(() => {
+    if (selectedStartTime && !timeSlots.includes(selectedStartTime)) {
+      setValue("startTime", "");
+    }
+  }, [timeSlots, selectedStartTime, setValue]);
+
+  const startTimeHint = !selectedDate
+    ? t("fromFivePmHint")
+    : isWeekend
+      ? t("weekendAnytimeHint")
+      : t("weekdayFromFivePmHint");
 
   const onSubmit = async (data: AirportBookingInput) => {
     setServerError(null);
@@ -154,7 +186,7 @@ export function AirportBookingForm({
                   <SelectValue placeholder={t("startTime")} />
                 </SelectTrigger>
                 <SelectContent>
-                  {TIME_SLOTS.map((slot) => (
+                  {timeSlots.map((slot) => (
                     <SelectItem key={slot} value={slot}>
                       {slot}
                     </SelectItem>
@@ -164,7 +196,7 @@ export function AirportBookingForm({
             )}
           />
           <FieldError errors={[errors.startTime]} />
-          <FieldDescription>{t("fromFivePmHint")}</FieldDescription>
+          <FieldDescription>{startTimeHint}</FieldDescription>
         </Field>
 
         <Field data-invalid={!!errors.address}>

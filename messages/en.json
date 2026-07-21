@@ -19,8 +19,8 @@
     "cityDescription": "Available on weekends at an hourly rate – flexible for trips, errands, or appointments.",
     "cityBadge": "Sat & Sun only",
     "airportTitle": "Airport Transfer Bern ↔ Zurich",
-    "airportDescription": "Available all week, rides from 5pm, at a fixed price – relax on your way to the gate or back home.",
-    "airportBadge": "All week from 5pm",
+    "airportDescription": "Mon–Fri from 5pm, Sat & Sun around the clock, at a fixed price – relax on your way to the gate or back home.",
+    "airportBadge": "Mon–Fri from 5pm, Sat & Sun 24/7",
     "learnMore": "Learn more"
   },
   "Trust": {
@@ -74,7 +74,7 @@
     "cityTitle": "Book a city ride",
     "citySubtitle": "Bern City & surroundings — Saturdays and Sundays only, hourly rate.",
     "airportTitle": "Book an airport transfer",
-    "airportSubtitle": "Bern ↔ Zurich Airport — all week, rides from 5pm, at a fixed price.",
+    "airportSubtitle": "Bern ↔ Zurich Airport — Mon–Fri from 5pm, Sat & Sun around the clock, at a fixed price.",
     "date": "Date",
     "pickDate": "Pick a date",
     "startTime": "Time",
@@ -100,7 +100,9 @@
     "loginRequiredCta": "Log in",
     "leadTimeHint": "Book at least 24 hours in advance.",
     "weekendOnlyHint": "Only bookable on Saturdays and Sundays.",
-    "fromFivePmHint": "Only bookable from 5pm."
+    "fromFivePmHint": "Mon–Fri only bookable from 5pm, Sat & Sun around the clock.",
+    "weekdayFromFivePmHint": "Only bookable from 5pm on this weekday.",
+    "weekendAnytimeHint": "Bookable around the clock on weekends."
   },
   "BookingConfirmation": {
     "title": "Booking received!",

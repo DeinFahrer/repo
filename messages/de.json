@@ -19,8 +19,8 @@
     "cityDescription": "Am Wochenende für dich unterwegs – nach Stundenpreis, flexibel für Ausflüge, Einkäufe oder Termine.",
     "cityBadge": "Nur Sa & So",
     "airportTitle": "Flughafentransfer Bern ↔ Zürich",
-    "airportDescription": "Die ganze Woche verfügbar, Fahrten ab 17:00 Uhr, zum Fixpreis – entspannt zum Gate oder nach Hause.",
-    "airportBadge": "Ganze Woche ab 17:00",
+    "airportDescription": "Mo–Fr ab 17:00 Uhr, Sa & So rund um die Uhr, zum Fixpreis – entspannt zum Gate oder nach Hause.",
+    "airportBadge": "Mo–Fr ab 17:00, Sa & So 24/7",
     "learnMore": "Mehr erfahren"
   },
   "Trust": {
@@ -74,7 +74,7 @@
     "cityTitle": "Stadtfahrt buchen",
     "citySubtitle": "Bern Stadt & Umgebung — nur samstags und sonntags, nach Stundenpreis.",
     "airportTitle": "Flughafentransfer buchen",
-    "airportSubtitle": "Bern ↔ Zürich Flughafen — die ganze Woche, Fahrten ab 17:00 Uhr, zum Fixpreis.",
+    "airportSubtitle": "Bern ↔ Zürich Flughafen — Mo–Fr ab 17:00 Uhr, Sa & So rund um die Uhr, zum Fixpreis.",
     "date": "Datum",
     "pickDate": "Datum wählen",
     "startTime": "Uhrzeit",
@@ -100,7 +100,9 @@
     "loginRequiredCta": "Anmelden",
     "leadTimeHint": "Buchung mindestens 24 Stunden im Voraus.",
     "weekendOnlyHint": "Nur samstags und sonntags buchbar.",
-    "fromFivePmHint": "Nur ab 17:00 Uhr buchbar."
+    "fromFivePmHint": "Mo–Fr nur ab 17:00 Uhr buchbar, Sa & So rund um die Uhr.",
+    "weekdayFromFivePmHint": "An diesem Wochentag nur ab 17:00 Uhr buchbar.",
+    "weekendAnytimeHint": "Am Wochenende rund um die Uhr buchbar."
   },
   "BookingConfirmation": {
     "title": "Buchung erfasst!",
