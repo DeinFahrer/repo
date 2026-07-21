@@ -26,7 +26,7 @@ export function LocaleSwitcher() {
         aria-label={t("home")}
         className="h-8 w-[76px] border-none bg-transparent shadow-none"
       >
-        <SelectValue />
+        <SelectValue>{(value: string) => value.toUpperCase()}</SelectValue>
       </SelectTrigger>
       <SelectContent align="end">
         {routing.locales.map((loc) => (
