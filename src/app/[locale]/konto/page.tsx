@@ -19,6 +19,7 @@ export default async function AccountPage({
   const session = await auth();
   if (!session?.user) {
     redirect({ href: "/konto/anmelden", locale });
+    return;
   }
 
   const t = await getTranslations("Account");

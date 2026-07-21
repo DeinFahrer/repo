@@ -20,7 +20,9 @@ export function LocaleSwitcher() {
   return (
     <Select
       value={locale}
-      onValueChange={(next) => router.replace(pathname, { locale: next })}
+      onValueChange={(next) => {
+        if (next) router.replace(pathname, { locale: next });
+      }}
     >
       <SelectTrigger
         aria-label={t("home")}
