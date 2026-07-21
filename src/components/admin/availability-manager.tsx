@@ -7,6 +7,7 @@ import {
   createAvailabilityBlock,
   deleteAvailabilityBlock,
 } from "@/lib/actions/admin";
+import { toUtcDateOnly } from "@/lib/date-utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
@@ -42,7 +43,7 @@ export function AvailabilityManager({
     }
     setSubmitting(true);
     const result = await createAvailabilityBlock({
-      date,
+      date: toUtcDateOnly(date),
       startTime: startTime || undefined,
       endTime: endTime || undefined,
       reason: reason || undefined,

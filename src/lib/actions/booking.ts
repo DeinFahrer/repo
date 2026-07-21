@@ -23,18 +23,37 @@ export async function getPricing() {
   });
 }
 
+// `date` is expected to already be UTC-midnight-anchored (see
+// src/lib/date-utils.ts) so date-of-week checks are unambiguous
+// regardless of which timezone the server happens to run in.
 function combineDateTime(date: Date, time: string) {
   const [hours, minutes] = time.split(":").map(Number);
-  const combined = new Date(date);
-  combined.setHours(hours, minutes, 0, 0);
-  return combined;
+  return new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      hours,
+      minutes,
+    ),
+  );
 }
 
 async function hasBlockingConflict(date: Date) {
-  const dayStart = new Date(date);
-  dayStart.setHours(0, 0, 0, 0);
-  const dayEnd = new Date(date);
-  dayEnd.setHours(23, 59, 59, 999);
+  const dayStart = new Date(
+    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()),
+  );
+  const dayEnd = new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      23,
+      59,
+      59,
+      999,
+    ),
+  );
   const block = await prisma.availabilityBlock.findFirst({
     where: { date: { gte: dayStart, lte: dayEnd } },
   });
@@ -54,7 +73,7 @@ export async function createCityBooking(input: unknown) {
   const data = parsed.data;
 
   const pickupDateTime = combineDateTime(data.date, data.startTime);
-  const day = pickupDateTime.getDay();
+  const day = pickupDateTime.getUTCDay();
   if (day !== 0 && day !== 6) {
     return { error: "Stadtfahrten sind nur am Wochenende (Sa/So) buchbar." };
   }
@@ -101,7 +120,7 @@ export async function createAirportBooking(input: unknown) {
 
   const pickupDateTime = combineDateTime(data.date, data.startTime);
   const [hours] = data.startTime.split(":").map(Number);
-  const day = pickupDateTime.getDay();
+  const day = pickupDateTime.getUTCDay();
   const isWeekend = day === 0 || day === 6;
   if (!isWeekend && hours < 17) {
     return {

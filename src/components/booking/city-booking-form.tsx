@@ -12,6 +12,7 @@ import {
 } from "@/lib/validation/booking";
 import { createCityBooking } from "@/lib/actions/booking";
 import { formatRappen } from "@/lib/format";
+import { toUtcDateOnly } from "@/lib/date-utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -81,7 +82,10 @@ export function CityBookingForm({
   const onSubmit = async (data: CityBookingInput) => {
     setServerError(null);
     setSubmitting(true);
-    const result = await createCityBooking(data);
+    const result = await createCityBooking({
+      ...data,
+      date: toUtcDateOnly(data.date),
+    });
     setSubmitting(false);
     if (result.error) {
       setServerError(result.error);

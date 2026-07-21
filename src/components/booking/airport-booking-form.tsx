@@ -12,6 +12,7 @@ import {
 } from "@/lib/validation/booking";
 import { createAirportBooking } from "@/lib/actions/booking";
 import { formatRappen } from "@/lib/format";
+import { toUtcDateOnly } from "@/lib/date-utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -107,7 +108,10 @@ export function AirportBookingForm({
   const onSubmit = async (data: AirportBookingInput) => {
     setServerError(null);
     setSubmitting(true);
-    const result = await createAirportBooking(data);
+    const result = await createAirportBooking({
+      ...data,
+      date: toUtcDateOnly(data.date),
+    });
     setSubmitting(false);
     if (result.error) {
       setServerError(result.error);
