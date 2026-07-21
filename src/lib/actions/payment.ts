@@ -12,7 +12,7 @@ async function getOrigin() {
   return `${proto}://${host}`;
 }
 
-export async function createCheckoutSession(bookingId: string) {
+export async function createCheckoutSession(bookingId: string, locale: string) {
   const session = await auth();
   if (!session?.user) {
     return { error: "Bitte melde dich zuerst an." };
@@ -55,9 +55,8 @@ export async function createCheckoutSession(bookingId: string) {
         },
       },
     ],
-    automatic_payment_methods: { enabled: true },
-    success_url: `${origin}/buchung/${booking.id}?checkout=success`,
-    cancel_url: `${origin}/buchung/${booking.id}?checkout=cancelled`,
+    success_url: `${origin}/${locale}/buchung/${booking.id}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${origin}/${locale}/buchung/${booking.id}?checkout=cancelled`,
     metadata: { bookingId: booking.id },
   });
 
@@ -71,4 +70,36 @@ export async function createCheckoutSession(bookingId: string) {
   });
 
   return { url: checkoutSession.url };
+}
+
+export async function confirmCheckoutSession(
+  bookingId: string,
+  sessionId: string,
+) {
+  const session = await auth();
+  if (!session?.user) return;
+
+  const booking = await prisma.booking.findUnique({
+    where: { id: bookingId },
+  });
+  if (!booking || booking.userId !== session.user.id) return;
+  if (booking.status !== "PENDING_PAYMENT") return;
+  if (booking.stripeCheckoutSessionId !== sessionId) return;
+
+  const stripe = getStripeClient();
+  if (!stripe) return;
+
+  const checkoutSession = await stripe.checkout.sessions.retrieve(sessionId);
+  if (checkoutSession.payment_status === "paid") {
+    await prisma.booking.update({
+      where: { id: booking.id },
+      data: {
+        status: "CONFIRMED",
+        stripePaymentIntentId:
+          typeof checkoutSession.payment_intent === "string"
+            ? checkoutSession.payment_intent
+            : (checkoutSession.payment_intent?.id ?? null),
+      },
+    });
+  }
 }

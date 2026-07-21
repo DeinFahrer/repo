@@ -1,20 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Loader2 } from "lucide-react";
 import { createCheckoutSession } from "@/lib/actions/payment";
 import { Button } from "@/components/ui/button";
 
 export function PayButton({ bookingId }: { bookingId: string }) {
   const t = useTranslations("BookingConfirmation");
+  const locale = useLocale();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const onClick = async () => {
     setError(null);
     setLoading(true);
-    const result = await createCheckoutSession(bookingId);
+    const result = await createCheckoutSession(bookingId, locale);
     if (result.error || !result.url) {
       setLoading(false);
       setError(result.error ?? t("paymentError"));

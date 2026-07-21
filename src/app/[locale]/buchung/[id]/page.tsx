@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { getBookingForUser } from "@/lib/actions/booking";
+import { confirmCheckoutSession } from "@/lib/actions/payment";
 import { formatRappen } from "@/lib/format";
 import { Link } from "@/i18n/navigation";
 import { PayButton } from "@/components/booking/pay-button";
@@ -22,13 +23,18 @@ export default async function BookingConfirmationPage({
   searchParams,
 }: {
   params: Promise<{ locale: string; id: string }>;
-  searchParams: Promise<{ checkout?: string }>;
+  searchParams: Promise<{ checkout?: string; session_id?: string }>;
 }) {
   const { locale, id } = await params;
-  const { checkout } = await searchParams;
+  const { checkout, session_id } = await searchParams;
   setRequestLocale(locale);
 
   const t = await getTranslations("BookingConfirmation");
+
+  if (checkout === "success" && session_id) {
+    await confirmCheckoutSession(id, session_id);
+  }
+
   const booking = await getBookingForUser(id);
 
   if (!booking) {
