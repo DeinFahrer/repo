@@ -37,5 +37,31 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "rights": "All rights reserved."
+  },
+  "Auth": {
+    "registerTitle": "Create account",
+    "registerSubtitle": "Register to book a ride.",
+    "loginTitle": "Log in",
+    "loginSubtitle": "Good to see you again.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone number",
+    "password": "Password",
+    "submitRegister": "Create account",
+    "submitLogin": "Log in",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account yet?",
+    "loginLink": "Log in now",
+    "registerLink": "Register now",
+    "loginError": "Email or password is incorrect.",
+    "registerSuccess": "Account created! Logging you in …"
+  },
+  "Account": {
+    "welcome": "Welcome, {name}",
+    "myBookings": "My bookings",
+    "noBookings": "You don't have any bookings yet. Book your first ride now.",
+    "bookCity": "Book city ride",
+    "bookAirport": "Book airport transfer",
+    "logout": "Log out"
   }
 }

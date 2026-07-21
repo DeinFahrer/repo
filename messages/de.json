@@ -37,5 +37,31 @@
     "terms": "AGB",
     "privacy": "Datenschutz",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "Auth": {
+    "registerTitle": "Konto erstellen",
+    "registerSubtitle": "Registriere dich, um eine Fahrt zu buchen.",
+    "loginTitle": "Anmelden",
+    "loginSubtitle": "Schön, dich wiederzusehen.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefonnummer",
+    "password": "Passwort",
+    "submitRegister": "Konto erstellen",
+    "submitLogin": "Anmelden",
+    "haveAccount": "Schon ein Konto?",
+    "noAccount": "Noch kein Konto?",
+    "loginLink": "Jetzt anmelden",
+    "registerLink": "Jetzt registrieren",
+    "loginError": "E-Mail oder Passwort ist falsch.",
+    "registerSuccess": "Konto erstellt! Du wirst angemeldet …"
+  },
+  "Account": {
+    "welcome": "Willkommen, {name}",
+    "myBookings": "Meine Buchungen",
+    "noBookings": "Du hast noch keine Buchungen. Buche jetzt deine erste Fahrt.",
+    "bookCity": "Stadtfahrt buchen",
+    "bookAirport": "Flughafentransfer buchen",
+    "logout": "Abmelden"
   }
 }
