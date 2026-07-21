@@ -57,22 +57,26 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-2">
-        <Card className="border-border/80">
+      <section className="mx-auto grid w-full max-w-5xl gap-8 px-4 py-12 md:grid-cols-2">
+        <Card className="border-border/80 [--card-spacing:--spacing(7)] shadow-sm transition-shadow hover:shadow-md">
           <CardHeader>
-            <div className="mb-2 flex items-center justify-between">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                <MapPin className="h-5 w-5" />
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                <MapPin className="h-7 w-7" />
               </span>
               <Badge variant="secondary">{services("cityBadge")}</Badge>
             </div>
-            <CardTitle className="text-xl">{services("cityTitle")}</CardTitle>
-            <CardDescription>{services("cityDescription")}</CardDescription>
+            <CardTitle className="text-2xl">{services("cityTitle")}</CardTitle>
+            <CardDescription className="text-base leading-relaxed">
+              {services("cityDescription")}
+            </CardDescription>
           </CardHeader>
           <CardFooter>
             <Link
               href="/buchen/stadt"
-              className={cn(buttonVariants({ variant: "outline", className: "w-full" }))}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg", className: "w-full" }),
+              )}
             >
               {services("learnMore")}
               <ArrowRight className="h-4 w-4" />
@@ -80,21 +84,25 @@ export default async function HomePage({
           </CardFooter>
         </Card>
 
-        <Card className="border-border/80">
+        <Card className="border-border/80 [--card-spacing:--spacing(7)] shadow-sm transition-shadow hover:shadow-md">
           <CardHeader>
-            <div className="mb-2 flex items-center justify-between">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Plane className="h-5 w-5" />
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Plane className="h-7 w-7" />
               </span>
               <Badge variant="secondary">{services("airportBadge")}</Badge>
             </div>
-            <CardTitle className="text-xl">{services("airportTitle")}</CardTitle>
-            <CardDescription>{services("airportDescription")}</CardDescription>
+            <CardTitle className="text-2xl">{services("airportTitle")}</CardTitle>
+            <CardDescription className="text-base leading-relaxed">
+              {services("airportDescription")}
+            </CardDescription>
           </CardHeader>
           <CardFooter>
             <Link
               href="/buchen/flughafen"
-              className={cn(buttonVariants({ variant: "outline", className: "w-full" }))}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg", className: "w-full" }),
+              )}
             >
               {services("learnMore")}
               <ArrowRight className="h-4 w-4" />
