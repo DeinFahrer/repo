@@ -144,5 +144,30 @@
     "payProcessing": "Weiterleitung zur Zahlung …",
     "paymentError": "Zahlung konnte nicht gestartet werden.",
     "checkoutCancelledNotice": "Die Zahlung wurde abgebrochen. Du kannst es jederzeit erneut versuchen."
+  },
+  "Legal": {
+    "placeholderNotice": "Platzhaltertext — bitte vor dem Livegang durch die echten Angaben ersetzen (und idealerweise juristisch prüfen lassen).",
+    "imprintTitle": "Impressum",
+    "imprintBody": "[Firmenname]\n[Vorname Nachname]\n[Strasse Nr.]\n[PLZ Ort]\n[Schweiz]\n\nKontakt:\nTelefon: [Telefonnummer]\nE-Mail: [E-Mail-Adresse]\n\nHandelsregister-Nr. / UID: [falls vorhanden]\nBewilligung gewerbsmässige Personenbeförderung: [Bewilligungsnummer, ausstellende Behörde]",
+    "termsTitle": "Allgemeine Geschäftsbedingungen",
+    "termsIntro": "Diese AGB gelten für alle Buchungen von Fahrten über diese Website.",
+    "termsBookingTitle": "1. Buchung",
+    "termsBookingBody": "Buchungen für Stadtfahrten (Bern & Umgebung, nur Sa/So) und Flughafentransfers (Bern–Zürich, Mo–Fr ab 17:00 Uhr, Sa/So rund um die Uhr) sind mindestens 24 Stunden im Voraus vorzunehmen. Mit der Buchung entsteht ein verbindlicher Vertrag zwischen Kunde und [Firmenname].",
+    "termsPriceTitle": "2. Preise & Zahlung",
+    "termsPriceBody": "Stadtfahrten werden nach Stundenpreis, Flughafentransfers zum Fixpreis abgerechnet. Die Zahlung erfolgt online bei Buchung. Alle Preise verstehen sich in Schweizer Franken (CHF) inkl. allfälliger MWST.",
+    "termsCancelTitle": "3. Stornierung",
+    "termsCancelBody": "Eine kostenlose Stornierung ist bis 24 Stunden vor der gebuchten Abholzeit möglich. Bei späterer Stornierung oder Nichterscheinen wird der volle Fahrpreis fällig.",
+    "termsLiabilityTitle": "4. Haftung",
+    "termsLiabilityBody": "[Firmenname] haftet im Rahmen der geltenden gesetzlichen Bestimmungen und der bestehenden Betriebshaftpflichtversicherung. [Platzhalter — bitte durch rechtlich geprüften Text ersetzen.]",
+    "privacyTitle": "Datenschutzerklärung",
+    "privacyIntro": "Diese Datenschutzerklärung informiert über die Bearbeitung von Personendaten bei der Nutzung dieser Website und App.",
+    "privacyDataTitle": "1. Bearbeitete Daten",
+    "privacyDataBody": "Bei Registrierung und Buchung erheben wir Name, E-Mail-Adresse, Telefonnummer sowie buchungsbezogene Angaben (Datum, Adressen, Personenzahl). Zahlungsdaten werden ausschliesslich vom Zahlungsdienstleister Stripe verarbeitet, nicht von uns gespeichert.",
+    "privacyPurposeTitle": "2. Zweck der Bearbeitung",
+    "privacyPurposeBody": "Die Daten dienen der Abwicklung deiner Buchung, der Kommunikation sowie — nach deiner Zustimmung — der Verbesserung unseres Angebots.",
+    "privacyRightsTitle": "3. Deine Rechte",
+    "privacyRightsBody": "Du kannst jederzeit Auskunft, Berichtigung oder Löschung deiner Daten verlangen. Wende dich dazu an [E-Mail-Adresse].",
+    "privacyContactTitle": "4. Kontakt",
+    "privacyContactBody": "Verantwortlich für die Datenbearbeitung: [Firmenname], [Adresse], [E-Mail-Adresse]."
   }
 }

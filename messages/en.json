@@ -144,5 +144,30 @@
     "payProcessing": "Redirecting to payment …",
     "paymentError": "Payment could not be started.",
     "checkoutCancelledNotice": "Payment was cancelled. You can try again any time."
+  },
+  "Legal": {
+    "placeholderNotice": "Placeholder text — please replace with your real details before going live (and have it reviewed by a lawyer).",
+    "imprintTitle": "Imprint",
+    "imprintBody": "[Company name]\n[First name Last name]\n[Street No.]\n[Postal code City]\n[Switzerland]\n\nContact:\nPhone: [Phone number]\nEmail: [Email address]\n\nCommercial register no. / VAT ID: [if applicable]\nCommercial passenger transport permit: [permit number, issuing authority]",
+    "termsTitle": "Terms and Conditions",
+    "termsIntro": "These terms apply to all bookings made through this website.",
+    "termsBookingTitle": "1. Booking",
+    "termsBookingBody": "City rides (Bern & surroundings, Sat/Sun only) and airport transfers (Bern–Zurich, Mon–Fri from 5pm, Sat/Sun around the clock) must be booked at least 24 hours in advance. Booking creates a binding contract between the customer and [Company name].",
+    "termsPriceTitle": "2. Prices & Payment",
+    "termsPriceBody": "City rides are billed at an hourly rate, airport transfers at a fixed price. Payment is made online at the time of booking. All prices are in Swiss francs (CHF), including any applicable VAT.",
+    "termsCancelTitle": "3. Cancellation",
+    "termsCancelBody": "Free cancellation is possible up to 24 hours before the booked pickup time. Later cancellations or no-shows are charged the full fare.",
+    "termsLiabilityTitle": "4. Liability",
+    "termsLiabilityBody": "[Company name] is liable within the scope of applicable law and its business liability insurance. [Placeholder — please replace with legally reviewed text.]",
+    "privacyTitle": "Privacy Policy",
+    "privacyIntro": "This privacy policy explains how personal data is processed when using this website and app.",
+    "privacyDataTitle": "1. Data processed",
+    "privacyDataBody": "When you register and book, we collect your name, email address, phone number, and booking details (date, addresses, passenger count). Payment data is processed exclusively by our payment provider Stripe and is not stored by us.",
+    "privacyPurposeTitle": "2. Purpose of processing",
+    "privacyPurposeBody": "Data is used to process your booking, for communication, and — with your consent — to improve our service.",
+    "privacyRightsTitle": "3. Your rights",
+    "privacyRightsBody": "You can request access, correction, or deletion of your data at any time. Contact [Email address].",
+    "privacyContactTitle": "4. Contact",
+    "privacyContactBody": "Responsible for data processing: [Company name], [Address], [Email address]."
   }
 }
