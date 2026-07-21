@@ -111,7 +111,7 @@ export default async function HomePage({
         </Card>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12">
+      <section className="mx-auto w-full max-w-6xl px-4 py-12">
         <h2 className="mb-8 text-center text-2xl font-semibold">
           {trust("title")}
         </h2>
