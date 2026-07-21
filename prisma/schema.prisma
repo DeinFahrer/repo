@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+enum ServiceType {
+  CITY
+  AIRPORT
+}
+
+enum AirportDirection {
+  TO_AIRPORT
+  FROM_AIRPORT
+}
+
+enum BookingStatus {
+  PENDING_PAYMENT
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  phone        String?
+  role         Role      @default(CUSTOMER)
+  createdAt    DateTime  @default(now())
+  bookings     Booking[]
+  reviews      Review[]
+}
+
+model Booking {
+  id           String            @id @default(cuid())
+  userId       String
+  user         User              @relation(fields: [userId], references: [id])
+  serviceType  ServiceType
+  date         DateTime
+  startTime    String
+  durationHours Int?
+  direction    AirportDirection?
+  pickupAddress  String
+  dropoffAddress String
+  passengerCount Int
+  needsCargoMode Boolean         @default(false)
+  notes        String?
+  priceRappen  Int
+  status       BookingStatus     @default(PENDING_PAYMENT)
+  stripeCheckoutSessionId String?
+  stripePaymentIntentId   String?
+  cancelledAt  DateTime?
+  createdAt    DateTime          @default(now())
+  review       Review?
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  bookingId String   @unique
+  booking   Booking  @relation(fields: [bookingId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  rating    Int
+  comment   String
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model PricingSettings {
+  id                     Int      @id @default(autoincrement())
+  cityHourlyRateRappen   Int
+  airportFixedPriceRappen Int
+  updatedAt              DateTime @updatedAt
+}
+
+model AvailabilityBlock {
+  id        String   @id @default(cuid())
+  date      DateTime
+  startTime String?
+  endTime   String?
+  reason    String?
+  createdAt DateTime @default(now())
+}

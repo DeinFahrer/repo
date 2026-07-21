@@ -1,0 +1,41 @@
+{
+  "Nav": {
+    "home": "Start",
+    "bookCity": "Stadt buchen",
+    "bookAirport": "Flughafen buchen",
+    "reviews": "Bewertungen",
+    "account": "Mein Konto",
+    "login": "Anmelden",
+    "register": "Registrieren"
+  },
+  "Hero": {
+    "title": "Dein Fahrer in Bern",
+    "subtitle": "Persönlicher Fahrservice für Bern und den Flughafentransfer nach Zürich – zuverlässig, freundlich, einfach online buchbar.",
+    "ctaCity": "Stadtfahrt buchen",
+    "ctaAirport": "Flughafentransfer buchen"
+  },
+  "Services": {
+    "cityTitle": "Bern Stadt & Umgebung",
+    "cityDescription": "Am Wochenende für dich unterwegs – nach Stundenpreis, flexibel für Ausflüge, Einkäufe oder Termine.",
+    "cityBadge": "Nur Sa & So",
+    "airportTitle": "Flughafentransfer Bern ↔ Zürich",
+    "airportDescription": "Die ganze Woche verfügbar, Fahrten ab 17:00 Uhr, zum Fixpreis – entspannt zum Gate oder nach Hause.",
+    "airportBadge": "Ganze Woche ab 17:00",
+    "learnMore": "Mehr erfahren"
+  },
+  "Trust": {
+    "title": "Warum Dein Fahrer?",
+    "licensedTitle": "Bewilligt & versichert",
+    "licensedText": "Gewerbliche Personenbeförderung mit gültiger Bewilligung.",
+    "vehicleTitle": "Platz für alles",
+    "vehicleText": "7 Sitzplätze, bei Bedarf als Transporter mit ausgebauten Sitzen.",
+    "priceTitle": "Klare Preise",
+    "priceText": "Fixpreis für den Flughafentransfer, fairer Stundenpreis in der Stadt – keine versteckten Kosten."
+  },
+  "Footer": {
+    "imprint": "Impressum",
+    "terms": "AGB",
+    "privacy": "Datenschutz",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

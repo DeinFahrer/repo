@@ -1,0 +1,41 @@
+{
+  "Nav": {
+    "home": "Home",
+    "bookCity": "Book city ride",
+    "bookAirport": "Book airport transfer",
+    "reviews": "Reviews",
+    "account": "My account",
+    "login": "Log in",
+    "register": "Register"
+  },
+  "Hero": {
+    "title": "Your driver in Bern",
+    "subtitle": "Personal driving service for Bern and airport transfers to Zurich – reliable, friendly, and easy to book online.",
+    "ctaCity": "Book a city ride",
+    "ctaAirport": "Book airport transfer"
+  },
+  "Services": {
+    "cityTitle": "Bern City & Surroundings",
+    "cityDescription": "Available on weekends at an hourly rate – flexible for trips, errands, or appointments.",
+    "cityBadge": "Sat & Sun only",
+    "airportTitle": "Airport Transfer Bern ↔ Zurich",
+    "airportDescription": "Available all week, rides from 5pm, at a fixed price – relax on your way to the gate or back home.",
+    "airportBadge": "All week from 5pm",
+    "learnMore": "Learn more"
+  },
+  "Trust": {
+    "title": "Why Dein Fahrer?",
+    "licensedTitle": "Licensed & insured",
+    "licensedText": "Commercial passenger transport with a valid permit.",
+    "vehicleTitle": "Room for everything",
+    "vehicleText": "7 seats, and can be converted into a van with seats removed on request.",
+    "priceTitle": "Clear pricing",
+    "priceText": "Fixed price for airport transfers, fair hourly rate in the city – no hidden costs."
+  },
+  "Footer": {
+    "imprint": "Imprint",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "rights": "All rights reserved."
+  }
+}
